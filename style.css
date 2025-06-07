@@ -115,12 +115,14 @@ body {
   right: 10px;
   width: 400px;
   height: 300px;
-  background-color: #222;
+  background-color: #001e03;
   border: 1px solid #555;
   padding: 10px;
   white-space: pre-wrap;
   overflow-y: auto;
   z-index: 9999;
+  
+  
 }
 
 .svg-hex {
