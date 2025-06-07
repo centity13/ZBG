@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zodiac Hex Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="board-container">
+    <div id="board"></div>         <!-- Board (SVG injected here) -->
+    <div id="board-layer"></div>   <!-- Pieces go here -->
+  </div>
+
+  <div id="phase-display"></div>
+  <div id="turn-display"></div>
+
+  <button id="reset-button">Reset Game</button>
+
+  <div class="bank" id="bank-left">
+    <div class="bank-title">Player 1</div>
+    <input id="player1-name" type="text" value="Player 1" />
+    <div class="bank-grid" id="player1"></div>
+  </div>
+
+  <div class="bank" id="bank-right">
+    <div class="bank-title">Player 2</div>
+    <input id="player2-name" type="text" value="Player 2" />
+    <div class="bank-grid" id="player2"></div>
+  </div>
+
+  <div id="piece-info">Hover over a piece to view its ability.</div>
+  <button id="skill-button" disabled>Use Skill</button>
+  <div id="debug-panel"></div>
+
+  <!-- Only this! No board-render.js! -->
+  <script src="game.js"></script>
+</body>
+</html>

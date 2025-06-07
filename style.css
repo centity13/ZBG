@@ -1,0 +1,183 @@
+body {
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+#board-container {
+  position: relative;
+  flex: 1 1 auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  aspect-ratio: 1 / 1;
+  background-color: #222;
+  border: 2px solid #555;
+  margin: 10px auto;
+}
+
+#board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#board-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#board-layer .piece {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.bank {
+  position: absolute;
+  top: 80px;
+  width: 200px;
+  background-color: #222;
+  border: 2px solid #555;
+  padding: 10px;
+}
+
+#bank-left {
+  left: 20px;
+}
+
+#bank-right {
+  right: 20px;
+}
+
+.bank-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.bank-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.bank-slot {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.piece {
+  width: 40px;
+  height: 40px;
+  background-color: #555;
+  border: 2px solid #aaa;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 24px;
+  cursor: grab;
+}
+
+.piece:active {
+  cursor: grabbing;
+}
+
+#piece-info {
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #222;
+  border: 1px solid #555;
+  width: 600px;
+  text-align: center;
+}
+
+#debug-panel {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 400px;
+  height: 300px;
+  background-color: #222;
+  border: 1px solid #555;
+  padding: 10px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.svg-hex {
+  fill: #333;
+  stroke: #aaa;
+  stroke-width: 3;
+  shape-rendering: geometricPrecision;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  cursor: pointer;
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+.svg-hex:hover {
+  fill: #444;
+  stroke: #fff;
+}
+
+.svg-hex.highlight-move {
+  stroke: #0f0 !important;
+  fill: rgba(0, 255, 0, 0.2) !important;
+}
+
+.svg-hex.highlight-placement-legal {
+  stroke: #0f0 !important;
+  fill: rgba(0, 255, 0, 0.2) !important;
+}
+
+.svg-hex.highlight-placement-illegal {
+  stroke: #f00 !important;
+  fill: rgba(255, 0, 0, 0.2) !important;
+}
+
+.occupied-player1 {
+  fill: rgba(240, 240, 240, 0.3) !important; /* soft white */
+  stroke: #dddddd !important; /* soft white outline */
+}
+
+.occupied-player2 {
+  fill: rgba(20, 20, 20, 0.5) !important; /* deep black */
+  stroke: #444444 !important; /* dark gray outline */
+}
+
+.highlight-placement-legal-player1 {
+  stroke: #1a3f8f !important; /* player1 dark blue */
+  fill: rgba(50, 100, 200, 0.2) !important;
+}
+
+.highlight-placement-legal-player2 {
+  stroke: #aa4a00 !important; /* player2 dark orange */
+  fill: rgba(230, 120, 20, 0.2) !important;
+}
+
+.piece-text {
+  font-size: calc(var(--hex-size) * 0.8);
+  font-family: sans-serif;
+  font-weight: bold;
+  fill: #fff;
+  pointer-events: none;
+}
